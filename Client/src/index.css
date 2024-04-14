@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  direction: rtl;
+  font-family: "Vazir", sans-serif;
+  @apply bg-gray-300 text-gray-900 transition-colors duration-300 ease-linear;
+}
+body.dark {
+  @apply bg-gray-800 text-white-300;
+}
+
+@layer components {
+  .closed-sidebar {
+    @apply transition-all duration-200 scale-0 fixed origin-right;
+  }
+
+  .open-sidebar {
+    @apply z-50 transition-all duration-200 transform scale-100 origin-right;
+  }
+
+  .sidebar-icon {
+    @apply relative flex items-center justify-center w-12 h-12 text-gray-700 bg-white-300
+            mx-auto my-2 dark:text-white-400 dark:bg-gray-700 p-2 hover:p-1.5
+           dark:hover:text-white-200 dark:hover:bg-gray-800 rounded-xl ease-linear 
+           hover:rounded-sm transition-all duration-300 hover:cursor-pointer;
+  }
+  .header-icon {
+    @apply relative flex items-center justify-center w-12 h-12 text-gray-700
+            mx-auto my-2 dark:text-white-400  p-2 hover:p-1.5
+           dark:hover:text-white-200  rounded-xl ease-linear hover:rounded-sm 
+           transition-all duration-300 hover:cursor-pointer;
+  }
+  .sidebar-tooltip {
+    @apply absolute w-auto p-2 m-2 min-w-max right-14 rounded-md scale-0 bg-white-300
+     text-gray-900 dark:bg-gray-900 dark:text-white-200 text-xs font-bold 
+     transition-all duration-150 origin-right z-20;
+  }
+  .property-card {
+    @apply relative transition-colors ease-linear duration-300 border-black 
+    overflow-hidden flex flex-col rounded-lg items-start 
+    w-56  sm:w-11/12 md:w-11/12 lg:w-11/12 2xl:h-72 bg-white-100 
+    dark:bg-gray-700 dark:text-white-300 shadow-lg dark:shadow-none my-3;
+  }
+  .property-card-details {
+    @apply flex flex-col items-start p-2;
+  }
+  .header {
+    @apply flex items-center relative z-[1] justify-between 
+    pl-24 pr-2 w-full h-16 bg-gray-200 dark:bg-gray-700 
+    shadow-md dark:shadow-none;
+  }
+
+  .menu-btn {
+    @apply transform rotate-0 transition-all duration-200 ease-linear;
+  }
+
+  .menu-btn-engaged {
+    @apply transform rotate-90 transition-all duration-100 ease-linear;
+  }
+
+  .admin-button {
+    @apply relative flex items-center 
+    justify-center w-20 h-7 text-gray-700 bg-transparent 
+    mx-auto my-2 dark:text-white-400  p-2 hover:p-1.5 dark:hover:text-white-200 
+    rounded-xl ease-linear hover:text-blue-600 hover:rounded-sm transition-all 
+    duration-300 hover:cursor-pointer;
+  }
+
+  .navbar-menu {
+    @apply flex items-center justify-between w-2/12 h-full;
+  }
+  .input-field {
+    @apply w-full h-10 p-2 my-2 border-s-black bg-gray-300 dark:bg-gray-500 
+    dark:text-white-300 rounded-lg shadow-md dark:shadow-none;
+  }
+  .number-input {
+    @apply w-20 h-10 p-1 my-2 border-s-black bg-gray-300 dark:bg-gray-500 
+    dark:text-white-300 rounded-lg shadow-md dark:shadow-none;
+  }
+}
